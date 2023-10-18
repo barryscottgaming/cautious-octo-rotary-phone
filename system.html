@@ -1,0 +1,178 @@
+<html>
+    
+<!-- Mirrored from announcements.vexs.uk/system by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 18 Oct 2023 18:38:03 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+        <title>vEXS Announcement Machine</title>
+        <link rel="stylesheet" href="../cdn.jsdelivr.net/npm/bulma%400.8.0/css/bulma.min.css">
+        <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+        <link rel="stylesheet" type="text/css" href="stylesheets/modal.css">
+
+        <script type="text/javascript" src="../cdnjs.cloudflare.com/ajax/libs/howler/2.0.15/howler.min.js"></script>
+        <script defer src="../use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    </head>
+    <body>
+        <div class="columns" style="height:100%">
+            <div id="leftColumn" class="column">
+                <svg width="520" height="590" id="machine">
+                    <defs>
+                        <style type="text/css">
+                            @font-face {
+                                font-family: "Dot Matrix";
+                                src: url('font/DOTMATRI.TTF');
+                            }
+                        </style>
+                    </defs>
+
+                    <!-- entire rectangle -->
+                    <rect width="500" height="550" x="10" y="20" rx="20" ry="20" id="rectangle"/>
+
+                    <!-- LED display -->
+                    <rect width="300" height="100" x="110" y="75" id="LED"/>
+
+                    <!-- number button container -->
+                    <rect width="200" height="300" x="35" y="225" rx="12.5" ry="12.5" id="numberContainer"/>
+        
+                    <g class="lineDivider">
+                        <!-- vertical lines -->
+                        <line x1="101" x2="101" y1="225" y2="525" />
+                        <line x1="167" x2="167" y1="225" y2="525" />
+                    </g>
+
+                    <g class="lineDivider">
+                        <!-- horizonal lines -->
+                        <line x1="35" x2="235" y1="300" y2="300" />
+                        <line x1="35" x2="235" y1="375" y2="375" />
+                        <line x1="35" x2="235" y1="450" y2="450" />
+                    </g>
+        
+                    <!-- ANNC, MUSIC, FLIGHT container -->
+                    <rect width="170" height="210" x="240" y="225" rx="12.5" ry="12.5" id="threeButtonContainer" class="lineDivider"/>
+
+                    <g class="lineDivider">
+                        <!-- ANNC button -->
+                        <rect width="160" height="63" x="245" y="230" rx="12.5" ry="12.5" class="wideButton"/>
+
+                        <!-- MUSIC button -->
+                        <rect width="160" height="63" x="245" y="298" rx="12.5" ry="12.5" class="wideButton"/>
+
+                        <!-- FLIGHT button -->
+                        <rect width="160" height="63" x="245" y="368" rx="12.5" ry="12.5" class="wideButton"/>
+                    </g>
+
+                    <g class="wideButtonContainer">
+                        <!-- ANNC text container -->
+                        <rect width="80" height="25" x="310" y="250" rx="12.5" ry="12.5" class="wideButtonContainer" id="ANNCTextContainer"/>
+
+                        <!-- MUSIC text container -->
+                        <rect width="80" height="25" x="310" y="318" rx="12.5" ry="12.5" class="wideButtonContainer" id="MUSICTextContainer"/>
+
+                        <!-- FLIGHT text container -->
+                        <rect width="80" height="25" x="310" y="388" rx="12.5" ry="12.5" class="wideButtonContainer" id="FLIGHTTextContainer"/>
+                    </g>
+        
+                    <g class="generalText">
+                        <!-- ANNC, MUSIC & FLIGHT text -->
+                        <text x="350" y="267.5">ANNC</text>
+                        <text x="350" y="335.5">MUSIC</text>
+                        <text x="350" y="405.5">FLIGHT</text>
+                    </g>
+        
+                    <!-- START container -->
+                    <rect width="82.5" height="85" x="240" y="440" rx="12.5" ry="12.5" class="squareLikeContainer"/>
+
+                    <!-- START text container -->
+                    <rect width="75" height="25" x="244" y="445" rx="12.5" ry="12.5" class="smallerLabel" id="startTextContainer"/>
+                    <text x="281.5" y="463" class="generalText">START</text>
+
+
+                    <!-- STOP container -->
+                    <rect width="82.5" height="85" x="327.5" y="440" rx="12.5" ry="12.5" class="squareLikeContainer"/>
+        
+                    <!-- STOP text container -->
+                    <rect width="75" height="25" x="331.5" y="445" rx="12.5" ry="12.5" class="smallerLabel" id="stopTextContainer"/>
+                    <text x="369" y="463" class="generalText">STOP</text>
+        
+        
+                    <g class="clickable" id="numberButtons">
+                        <!-- row one -->
+                        <circle cx="68" cy="262.5" r="20" class="number 1" />
+                        <circle cx="134" cy="262.5" r="20" fill="black" class="number 2" />
+                        <circle cx="200" cy="262.5" r="20" class="number 3" />
+
+                        <!-- row two -->
+                        <circle cx="68" cy="337.5" r="20" class="number 4" />
+                        <circle cx="134" cy="337.5" r="20" class="number 5" />
+                        <circle cx="200" cy="337.5" r="20" class="number 6" />
+        
+                        <!-- row three -->
+                        <circle cx="68" cy="412.5" r="20" class="number 7" />
+                        <circle cx="134" cy="412.5" r="20" fill="black" class="number 8" />
+                        <circle cx="200" cy="412.5" r="20" class="number 9" />
+        
+                        <!-- row four -->
+                        <circle cx="68" cy="487.5" r="20" class="buttonRV" />
+                        <circle cx="134" cy="487.5" r="20" class="number 0" />
+                        <circle cx="200" cy="487.5" r="20" class="buttonEnter" />
+                    </g>
+        
+                    <g id="numText" class="generalText clickable" font-size="18">
+                        <!-- NUMBERS -->
+                        <text x="68" y="267" class="number 1">1</text>
+                        <text x="134" y="267" fill="white" stroke="white" class="number 2">2</text>
+                        <text x="200" y="267" class="number 3">3</text>
+                        <text x="68" y="342" class="number 4">4</text>
+                        <text x="134" y="342" class="number 5">5</text>
+                        <text x="200" y="342" class="number 6">6</text>
+                        <text x="68" y="417" class="number 7">7</text>
+                        <text x="134" y="417" fill="white" stroke="white" class="number 8">8</text>
+                        <text x="200" y="417" class="number 9">9</text>
+                        <text x="68" y="492" class="buttonRV">RV</text>
+                        <text x="134" y="492" class="number 0">0</text>
+                        <text x="200" y="492" class="buttonEnter">ENT</text>
+                    </g>
+        
+                    <g stroke-width="3" stroke="black" fill="#FEFCCB" id="functionButtons" class="clickable">
+                        <!-- ANNC, MUSIC, FLIGHT buttons -->
+                        <circle cx="275" cy=261.5 r="20" class="announcement" id="buttonANNC"/>
+                        <circle cx="275" cy=329.5 r="20" class="music" id="buttonMUSIC"/>
+                        <circle cx="275" cy=399.5 r="20" class="flight" id="buttonFLIGHT"/>
+                    </g>
+
+                    <g stroke-width="3" stroke="black" class="clickable" id="startButton">
+                        <!-- START button -->
+                        <circle cx="281.25" cy="497.5" r="20" fill="#BCB9CC" id="startBackground"/>
+                        <circle cx="281.25" cy="497.5" r="8" />
+                    </g>
+                    
+                    <!-- STOP button -->
+                    <circle cx="368.75" cy="497.5" r=20 fill="#BCB9CC" stroke="black" stroke-width="3" class="clickable" id="stopButton"/>
+        
+                    <text x="120" y="100" class="LEDText disableTextHighlight" id="LEDTopText">SELECT MODE</text>
+                    <text x="120" y="160" class="LEDText disableTextHighlight" id="LEDBottomText"></text>
+                </svg>
+            </div>
+            <div class='column'>
+                <div id="buttonContainer">
+                    <button id="numberGuideButton" class="displayButton is-holidaysBlue button is-large is-fullwidth">Display number guide</button>
+                    <button id="usageGuideButton" class="displayButton button is-large is-holidaysBlue is-fullwidth">Display usage guide</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="imageModal" class="modal">
+
+            <!-- The Close Button -->
+            <span class="close">&times;</span>
+
+            <!-- Modal Content (The Image) -->
+            <img id="imagePlace">
+        </div>
+    </body>
+
+    <script type="text/javascript" src="data/mappings3f4f.js?v=200813"></script>
+    <script type="text/javascript" src="javascripts/systemController57b5.js?v=200731"></script>
+    <script type="text/javascript" src="javascripts/imageController2089.js?v=201116"></script>
+
+<!-- Mirrored from announcements.vexs.uk/system by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 18 Oct 2023 18:38:05 GMT -->
+</html>

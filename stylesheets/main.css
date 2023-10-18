@@ -1,0 +1,161 @@
+.addWhitespace {
+    white-space: pre;
+}
+
+.inUse {
+    fill: #BCB9CC !important;
+}
+
+.available {
+    fill: #FEFCCB !important;
+}
+
+.LEDText {
+    font-family: "Dot Matrix";
+    font-size: 18;
+}
+
+.disableTextHighlight {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none; /* Webkit */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE 10  */
+
+    /* Currently not supported in Opera but will be soon */
+    -o-user-select: none;
+    user-select: none;
+}
+
+
+.clickable:hover {
+    cursor: pointer;
+}
+
+.lineDivider {
+    stroke: black;
+    stroke-width: 1;
+}
+
+.wideButton {
+    width: 160; 
+    height: 63;
+    fill-opacity: 0;
+}
+
+.wideButtonContainer {
+    stroke: black;
+    fill: #BCB9CC;
+    width: 80;
+    height: 25;
+}
+
+.generalText {
+    text-anchor: middle;
+    font-family: "Arial Narrow";
+    stroke-width: 1;
+    stroke: black;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none; /* Webkit */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE 10  */
+
+    /* Currently not supported in Opera but will be soon */
+    -o-user-select: none;
+    user-select: none;
+}
+
+.squareLikeContainer {
+    width: 82.5;
+    height: 85;
+    stroke: black;
+    fill-opacity: 0;
+}
+
+#numberButtons {
+    stroke-width: 3;
+    stroke: black;
+    fill: #BCB9CC;
+}
+
+.smallerLabel {
+    stroke: black;
+    fill: #BCB9CC;
+    width: 75;
+    height: 25;
+}
+
+#rectangle {
+    width: 500;
+    height: 550;
+
+    fill: #C0B9B3;
+    stroke: #606674;
+    stroke-width: 20;
+}
+
+#LED {
+    width: 300;
+    height: 100;
+
+    fill: #95E048;
+    stroke: black;
+    stroke-width: 5;
+}
+
+#numberContainer {
+    width: 200;
+    height: 300;
+
+    stroke: #111111;
+    fill-opacity: 0;
+}
+
+#threeButtonContainer {
+    width: 170;
+    height: 210;
+    fill-opacity: 0;
+}
+
+#leftColumn {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/*#machine {
+    display: block;
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+}*/
+
+#buttonContainer {
+    margin: auto;
+    width: 75%;
+    height: 50%;
+    -ms-transform: translateY(50%);
+    transform: translateY(50%);
+}
+
+#usageGuideButton {
+    position: absolute;
+    bottom: 0px;
+}
+
+#numberGuideButton {
+    color: white !important;
+    background: #1C69FF;
+
+}
+
+#usageGuideButton {
+    color: white !important;
+    background: #D90000;
+
+}
+
+.displayButton {
+    height: 45% !important;
+}
