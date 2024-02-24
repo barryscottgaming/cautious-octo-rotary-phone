@@ -45,7 +45,7 @@ class StartStop {
 
 class AudioManager {
     static get availableAnnouncements() {
-        return mappings;
+        return mappings
     }
     static get audioQueue() {
         return this.queue || [];
@@ -53,7 +53,7 @@ class AudioManager {
 
     static set audioQueue(announcement) {
         if (this.audioQueue.length === 0) {
-            this.queue = [];
+            this.queue = []
         }
 
         if (announcement.priority < this.currentlyPlaying.priority) {
@@ -82,7 +82,7 @@ class AudioManager {
     }
 
     static set currentlyPlaying(audioObject) {
-        this.playingNow = audioObject;
+        this.playingNow = audioObject
     }
 
     static getType(number) {
@@ -150,7 +150,7 @@ class AudioManager {
             this.currentlyPlaying = this.audioQueue.shift();
 
             if (this.currentlyPlaying.audio.seek() != 0) {
-                this.currentlyPlaying.audio.play();
+                this.currentlyPlaying.audio.play()
                 StartStop.enableStop();
             } else {
                 LCD.displayAudio();
@@ -170,23 +170,23 @@ class FunctionButtons {
     static enable() {
         for (let i = 0; i < this.functionButtons.length; i++) {
             const nodeType = this.functionButtons[i].nodeName;
-            const inUse = (nodeType === 'circle') ? this.functionButtons[i].classList.contains('inUse') : false;
+            const inUse = (nodeType == 'circle') ? this.functionButtons[i].classList.contains('inUse') : false;
 
             if (!inUse) {
                 const announcementType = this.functionButtons[i].classList;
 
                 this.functionButtons[i].onclick = () => {
                     this.functionButtons[i].classList.add('inUse');
-                    this.disable();
+                    this.disable()
                     LCD.setDisplay('ENTER NUMBER');
-                    Numpad.enable(announcementType[0]);
+                    Numpad.enable(announcementType[0])
                 };
             }
         }
     }
 
     static enableType(type) {
-        const functionButton = document.querySelectorAll(`#functionButtons > .${type}`);
+        const functionButton = document.querySelectorAll(`#functionButtons > .${type}`)
         functionButton[0].classList.remove('inUse');
     }
 
@@ -211,8 +211,8 @@ class LCD {
     }
 
     static setDisplay(toDisplay) {
-        if (toDisplay.includes('\n')) {
-            const newLineIndex = toDisplay.indexOf('\n');
+        if (toDisplay.includes('\\n')) {
+            const newLineIndex = toDisplay.indexOf('\\n');
 
             this.topLine.textContent = toDisplay.substr(0, newLineIndex);
             this.bottomLine.textContent = toDisplay.substr(newLineIndex + 2);
@@ -226,10 +226,10 @@ class LCD {
         if (!Numpad.enabled) {
             if (AudioManager.currentlyPlaying.audio.playing()) {
                 this.topLine.textContent = AudioManager.currentlyPlaying.name;
-                this.bottomLine.textContent = 'PLAYING';
+                this.bottomLine.textContent = 'PLAYING'
             } else {
                 this.topLine.textContent = AudioManager.currentlyPlaying.name;
-                this.bottomLine.textContent = 'STOPPED';
+                this.bottomLine.textContent = 'STOPPED'
             }
         }
     }
@@ -268,17 +268,17 @@ class Numpad {
         this.inUse = true;
 
         for (let i = 0; i < this.numberButtons.length; i++) {
-            const number = this.numberButtons[i].classList[1];
+            const number = this.numberButtons[i].classList[1]
             this.numberButtons[i].onclick = () => {
-                LCD.setDisplay(`${LCD.contents === LCD.defaultText || LCD.contents === 'ENTER NUMBER' ? '' : LCD.contents}${number}`);
-            };
+                LCD.setDisplay(`${LCD.contents === LCD.defaultText || LCD.contents === 'ENTER NUMBER' ? '' : LCD.contents}${number}`)
+            }
         }
 
         for (let i = 0; i < this.enterButtons.length; i++) {
             this.enterButtons[i].onclick = () => {
                 this.disable();
 
-                const reqNumber = LCD.contents;
+                const reqNumber = LCD.contents
 
                 if (AudioManager.exists(announcementType, reqNumber)) {
                     this.disable();
@@ -291,13 +291,13 @@ class Numpad {
                         App.reset();
                     }, 5000);
                 }
-            };
+            }
         }
 
         for (let i = 0; i < this.clearButtons.length; i++) {
             this.clearButtons[i].onclick = () => {
                 LCD.setDisplay(LCD.contents.slice(0, -1));
-            };
+            }
         }
     }
 
@@ -309,11 +309,11 @@ class Numpad {
         }
 
         for (let i = 0; i < this.enterButtons.length; i++) {
-            this.enterButtons[i].onclick = undefined;
+            this.enterButtons[i].onclick =  undefined
         }
 
         for (let i = 0; i < this.clearButtons.length; i++) {
-            this.clearButtons[i].onclick = undefined;
+            this.clearButtons[i].onclick =  undefined
         }
     }
 }
@@ -332,6 +332,5 @@ class App {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const app = new App();
-});
+// Instantiate the App directly
+const app = new App();
